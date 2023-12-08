@@ -1,0 +1,29 @@
+.team-page {
+  text-align: center;
+
+  .team-list {
+    width: 1002px;
+    margin: 0 auto;
+
+    .team-member-wrapper {
+      width: 334px;
+      height: 385px;
+      display: inline-block;
+
+      .team-member {
+
+        .image-holder {
+          background-color: #000;
+          border-radius: 100%;
+          width: 216px;
+          height: 217px;
+          margin: 0 auto;
+        }
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.contact-page {
+
+  .contact-form {
+    width: 940px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+
+    .input-fields-wrapper {
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      .flex {
+        display: flex;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        height: 30px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        height: 40px;
+      }
+
+      .message {
+        width: 100%;
+        resize: none;
+        margin-bottom: 10px;
+        height: 150px;
+      }
+
+      .subject {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      .name-email-wrapper {
+        display: flex;
+        margin-bottom: 10px;
+
+        input {
+          width: 50%;
+        }
+
+        .name {
+          margin-right: 5px;
+        }
+
+        .email {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

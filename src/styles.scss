@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+* {
+  font-family: poppins-semibold, poppins, sans-serif;
+}
+
+.united-mission-logo {
+  height: 122px;
+  background-color: #fff;
+
+  .logo-img {
+    background-image: url('assets/images/united-mission-logo.jpeg');
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: center;
+    height: 122px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.no-scroll {
+  overflow: hidden;
+}

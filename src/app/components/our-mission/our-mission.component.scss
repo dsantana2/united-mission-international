@@ -1,0 +1,63 @@
+.our-mission-section {
+  width: 100%;
+  background-color: #fff;
+  height: 618px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+
+  img {
+    width: calc(100% /2);
+    height: 618px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .our-mission {
+    width: calc(100% /2);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .txt-wrapper {
+      h1 {
+        width: 489px;
+        font-size: 30px;
+        color: #6d7377;
+        padding-bottom: 30px;
+        font-family: futura-lt-w01-book, sans-serif;
+        margin: 0;
+      }
+
+      p,
+      span {
+        width: 489px;
+        color: #6d7377;
+        font-family: futura-lt-w01-book, sans-serif;
+        font-size: 18px;
+
+      }
+
+      .donate-btn {
+        margin-top: 40px;
+        height: 50px;
+        width: 190px;
+        background-color: #003399;
+        color: white;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        cursor: pointer;
+
+
+        &:hover {
+          background-color: #6884b9;
+
+        }
+      }
+    }
+
+  }
+}

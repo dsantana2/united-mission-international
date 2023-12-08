@@ -1,0 +1,25 @@
+<div [style.height.px]="viewPortHeight" class="next-mission-page">
+  <div class="scroll-div" #widgetsContent>
+    <div class="next-mission-pages-wrapper">
+      <div [style.width.px]="viewPortWidth" class="left-page">
+        <a (click)="scrollRight()" class="close"></a>
+        <app-animated-text [text]="'Our Destination'"></app-animated-text>
+      </div>
+      <div [style.width.px]="viewPortWidth" class="center-page">
+        <div class="controls-wrapper">
+          <button class="control prev" (click)="scrollLeft()">
+            <span class="arrow left"></span>
+          </button>
+          <button class="control next" (click)="scrollRight()">
+            <span class="arrow right"></span>
+          </button>
+        </div>
+        <app-animated-text [text]="'Our Next Mission'"></app-animated-text>
+      </div>
+      <div [style.width.px]="viewPortWidth" class="right-page">
+        <a (click)="scrollLeft()" class="close"></a>
+        <app-animated-text [text]="'Our Plan'"></app-animated-text>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.navigation {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: #5a77ab;
+
+  // &.fixed {
+  //   position: fixed;
+  //   top: 0;
+  //   z-index: 1;
+  // }
+
+  .navigation-wrapper {
+    display: flex;
+    margin: 0 auto;
+
+    .route-wrapper {
+      padding: 6px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #8097be;
+      }
+
+      .link {
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
