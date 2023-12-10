@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ElementsService } from 'src/app/services/elements.service';
 import { ViewportScroller } from '@angular/common';
-// import * as AWS from 'aws-sdk';
+import * as AWS from 'aws-sdk';
 
 @Component({
 	selector: 'app-home',
@@ -17,47 +17,56 @@ export class HomeComponent implements OnInit {
 	currentScrollPosition: number = 0;
 	viewPortHeight: number = 0;
 	scrollDirection: 'down' | 'up' = "down";
+	url: string;
+	s3: any;
 
 	images: { src: string, text: { header: string, description: string } }[] = [
 		{
-			src: 'https://static.wixstatic.com/media/bf1fba_2ce876d8847b4a6e801bdcb7f4ce4457~mv2.jpg/v1/fill/w_2820,h_1302,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/bf1fba_2ce876d8847b4a6e801bdcb7f4ce4457~mv2.jpg',
+			src: 'https://united-mission-international.s3.us-east-2.amazonaws.com/carosel/carosel-photo-one.webp',
 			text: { header: "United Mission International Welcomes You", description: 'Make a Difference Today' }
 		},
 		{
-			src: 'https://static.wixstatic.com/media/bf1fba_da9b910bdcaf48ed932816edc9630150~mv2.png/v1/fill/w_1481,h_684,al_c,q_90,enc_auto/bf1fba_da9b910bdcaf48ed932816edc9630150~mv2.png',
+			src: 'https://united-mission-international.s3.us-east-2.amazonaws.com/carosel/carosel-photo-two.webp',
 			text: { header: "Stay Connected", description: 'Join our newsletter to stay connected to us. We will keep you updated with all projects we are undertaking.' }
 		},
 		{
-			src: 'https://static.wixstatic.com/media/bf1fba_684a131d0ac8455ba59d12d28393e4c4~mv2.jpg/v1/fill/w_2820,h_1302,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/bf1fba_684a131d0ac8455ba59d12d28393e4c4~mv2.jpg',
+			src: 'https://united-mission-international.s3.us-east-2.amazonaws.com/carosel/carosel-photo-three.webp',
 			text: { header: "Become A Volunteer", description: 'Join a growing team to bring hope and relief to those in need' }
 		}];
 
 	constructor(private elementsService: ElementsService, private viewportScroller: ViewportScroller) { }
 
 	ngOnInit(): void {
-		console.log(this.mycomponents)
 		this.viewPortHeight = this.elementsService.getViewPortData().height;
-		// AWS.config.update({
-		//   region: 'US East (Ohio) us-east-2',
-		//   accessKeyId: 'AKIA2YF5OWU2QAAXST2D',
-		//   secretAccessKey: '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'
-		// });
 
-		// let bucket = (new AWS.S3({
-		//   params: {
-		//     bucket: 'carosel',
-		//     key: 'hands.webp',
-		//     contentType: 'image/webp'
-		//   }
-		// }));
+		this.s3 = new AWS.S3({
+			accessKeyId: "AKIA2YF5OWU2QAAXST2D",
+			region: 'us-east-2',
+			secretAccessKey: "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"
+		});
 
-		// const url = bucket.getObject((err, data) => {
-		//   console.log(err)
-		//   console.log(data)
-		// });
 
-		// console.log(url)
+		this.listDirectories().then((res) => {
+			console.log(res)
+		})
 	}
+
+	listDirectories = () => {
+		return new Promise((resolve, reject) => {
+			const s3params = {
+				Bucket: 'united-mission-international',
+				Prefix: 'carosel/',
+				MaxKeys: 20,
+				Delimiter: '/',
+			};
+			this.s3.listObjectsV2(s3params, (err, data) => {
+				if (err) {
+					reject(err);
+				}
+				resolve(data);
+			});
+		});
+	};
 
 	ngAfterViewInit() {
 		this.elementsService.logoElementData = {
