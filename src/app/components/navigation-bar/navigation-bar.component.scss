@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   background-color: #5a77ab;
+  z-index: 1;
 
   // &.fixed {
   //   position: fixed;
@@ -22,6 +23,10 @@
 
       &:hover {
         background-color: #8097be;
+
+        .link {
+          color: #5a77ab;
+        }
       }
 
       .link {
@@ -30,6 +35,8 @@
         text-decoration: none;
         padding-left: 10px;
         padding-right: 10px;
+        font-family: 'open sans', sans-serif;
+        font-size: 14px;
       }
     }
   }

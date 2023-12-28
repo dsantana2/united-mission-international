@@ -1,1 +1,250 @@
-.about-page {}
+.about-page {
+
+  .images-wrapper {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    z-index: 0;
+
+    .kidz-one {
+      width: 50%;
+      height: 100%;
+      background-image: url(../../../assets/images/kidz-one.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+
+    .kidz-two {
+      width: 50%;
+      height: 100%;
+      background-image: url(../../../assets/images/kidz-two.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .about-me-page-content {
+    z-index: 1;
+    position: relative;
+    background-color: #f5f5f5;
+  }
+
+
+  .about-content {
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    h3 {
+      color: #555555;
+      font-family: poppins-semibold, poppins, sans-serif;
+      line-height: 1.25em;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-family: futura-lt-w01-book, sans-serif;
+      color: #090e20;
+      line-height: 1.55em;
+      font-size: 18px;
+
+      &:last-child {
+        margin-top: 26px;
+        margin-bottom: 26px;
+      }
+    }
+  }
+
+  .gallery-wrapper {
+    display: block;
+    position: relative;
+    height: auto;
+    text-align: center;
+
+    .image-section {
+      width: 806px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+
+      .img-wrapper {
+        width: 393px;
+        height: 392px;
+        transition: opacity 0.2s ease 0s;
+        opacity: 1;
+        display: block;
+        display: inline-block;
+        padding-top: 4px;
+        cursor: pointer;
+
+        &:nth-child(even) {
+          padding-left: 10px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-size: contain;
+          object-fit: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+
+  .who-we-serve {
+    text-align: center;
+    background-color: #003399;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+
+    .content {
+      display: block;
+    }
+
+    h1 {
+      color: #fff;
+      font-family: poppins-semibold, poppins, sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    p {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.55em;
+      font-family: futura-lt-w01-book, sans-serif;
+      max-width: 977px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    span {
+      color: #fff;
+      margin-top: 20px;
+      display: block;
+      font-size: 18px;
+      line-height: 1.55em;
+      font-family: futura-lt-w01-book, sans-serif;
+    }
+
+    a {
+      display: block;
+      width: 165px;
+      text-align: center;
+      color: #090e20;
+      font-family: poppins-semibold, poppins, sans-serif;
+      background-color: #fff;
+      border-radius: 100px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 40px;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  .why-we-serve {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+
+    .title-wrapper {
+      width: 100%;
+      background-color: #fff;
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      .why-we-serve-lbl {
+        line-height: 1.25em;
+        text-align: center;
+        font-size: 30px;
+        font-family: poppins-semibold, poppins, sans-serif;
+        letter-spacing: normal;
+        color: #003399;
+      }
+    }
+
+    .because-we-care-wrapper {
+      height: 400px;
+      width: 100%;
+
+      .because-we-care {
+        height: 100%;
+        width: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+          width: 339px;
+
+          h1 {
+            font-size: 30px;
+            color: #003399;
+            font-weight: bold;
+            font-weight: poppins-semibold, poppins, sans-serif;
+          }
+
+          p {
+            font-family: futura-lt-w01-book, sans-serif;
+            font-size: 20px;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+
+    .because-it-gives-porpuse-wrapper {
+      height: 400px;
+      width: 100%;
+
+      .because-it-gives-porpuse {
+        height: 100%;
+        width: 50%;
+        background-color: #fff;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+          width: 422px;
+
+          h1 {
+            font-size: 30px;
+            color: #003399;
+            font-weight: bold;
+            font-weight: poppins-semibold, poppins, sans-serif;
+          }
+
+          p {
+            font-family: futura-lt-w01-book, sans-serif;
+            font-size: 20px;
+            line-height: 1.5em;
+            width: 339px;
+          }
+        }
+
+      }
+    }
+  }
+}

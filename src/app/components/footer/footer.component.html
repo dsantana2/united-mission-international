@@ -7,17 +7,17 @@
           <div class="email-icon"></div>
           <div class="email-details">
             <label class="email-lbl">Email us</label>
-            <a class="email">info@unitedmi.org</a>
+            <a (click)="sendEmail()" class="email">info@unitedmi.org</a>
           </div>
         </div>
       </div>
       <div class="follow-us">
         <span class="txt">Follow us</span>
         <div class="social-media-icons">
-          <a class="twitter-x-icon"></a>
-          <a class="facebook-icon"></a>
-          <a class="instagram-icon"></a>
+          <a (click)="openFacebook()" class="facebook-icon"></a>
           <a class="snapchat-icon"></a>
+          <a (click)="openIntagrame()" class="instagram-icon"></a>
+          <a (click)="openX()" class="twitter-x-icon"></a>
         </div>
       </div>
     </div>

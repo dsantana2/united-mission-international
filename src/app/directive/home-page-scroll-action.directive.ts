@@ -23,12 +23,13 @@ export class HomePageScrollActionDirective implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
-		this.calculatePageData();
-		console.log(this.viewsArr)
-		console.log(this.pagesData);
+		// this.calculatePageData();
+		// console.log(this.viewsArr)
+		// console.log(this.pagesData);
 	}
 
 	ngOnInit(): void {
+		console.log('he1')
 		console.log(this.elementRef)
 		this.viewsArr = Array.from(this.elementRef.nativeElement.childNodes).filter((x: any) => x.nodeName === "SECTION");
 	}
@@ -79,36 +80,37 @@ export class HomePageScrollActionDirective implements OnInit, AfterViewInit {
 
 	@HostListener("window:scroll", ['$event.target'])
 	onContentScrolled(e: HTMLElement) {
-		const scroll = window.pageYOffset;
-		let scrollOn = 100;
-		if (scroll > this.currentScrollPosition) {
-			// console.log("scrollDown");
-			this.scrollDirection = 'down';
-			scrollOn = this.pageInView.offsetTop + 100;
-		} else {
-			// console.log("scrollUp");
-			this.scrollDirection = 'up';
-			scrollOn = this.pageInView.offsetTop - 100;
-		}
-		this.currentScrollPosition = scroll;
+		console.log('here')
+		// const scroll = window.pageYOffset;
+		// let scrollOn = 100;
+		// if (scroll > this.currentScrollPosition) {
+		// 	// console.log("scrollDown");
+		// 	this.scrollDirection = 'down';
+		// 	scrollOn = this.pageInView.offsetTop + 100;
+		// } else {
+		// 	// console.log("scrollUp");
+		// 	this.scrollDirection = 'up';
+		// 	scrollOn = this.pageInView.offsetTop - 100;
+		// }
+		// this.currentScrollPosition = scroll;
 
-		if (scroll >= scrollOn && !this.scrollInProgress) {
-			console.log('in hereee')
-			this.scrollInProgress = true;
-			this.scrollToAnchor();
-		}
+		// if (scroll >= scrollOn && !this.scrollInProgress) {
+		// 	console.log('in hereee')
+		// 	this.scrollInProgress = true;
+		// 	this.scrollToAnchor();
+		// }
 
-		console.log('scrollOn: ' + scrollOn)
-		console.log(scroll)
-		console.log(this.pageToScrollTo)
+		// console.log('scrollOn: ' + scrollOn)
+		// console.log(scroll)
+		// console.log(this.pageToScrollTo)
 
-		if (this.pageToScrollTo != undefined && scroll === this.pageToScrollTo.offsetTop) {
-			console.log('finished')
-			this.scrollInProgress = false;
-			this.pageInView = this.pageToScrollTo;
-			this.renderer.removeClass(this.document.body, 'no-scroll');
+		// if (this.pageToScrollTo != undefined && scroll === this.pageToScrollTo.offsetTop) {
+		// 	console.log('finished')
+		// 	this.scrollInProgress = false;
+		// 	this.pageInView = this.pageToScrollTo;
+		// 	this.renderer.removeClass(this.document.body, 'no-scroll');
 
 
-		}
+		// }
 	}
 }

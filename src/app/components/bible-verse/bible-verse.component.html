@@ -1,7 +1,7 @@
 <div class="bible-verse-section">
   <div class="text-wrapper">
-    <span>Then I heard the voice of the Lord saying, “Whom shall I send? And who will go for us?”</span>
-    <span>And I said, “Here am I. Send me!”</span>
-    <span class="verse">- Isaiah 6:8</span>
+    <span>{{bibleVerseOfTheDay.text}}</span>
+    <span *ngIf="bibleVerseOfTheDay.textTwo">{{bibleVerseOfTheDay.textTwo}}</span>
+    <span class="verse">{{bibleVerseOfTheDay.verse}}</span>
   </div>
 </div>

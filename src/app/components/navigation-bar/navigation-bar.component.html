@@ -1,7 +1,7 @@
   <div #navigationBar class="navigation" [ngClass]="{'fixed': navBarFixedToTop}">
     <div class="navigation-wrapper">
-      <div class="route-wrapper" *ngFor="let route of routes">
-        <a [routerLink]="route.route" class="link">{{route.text}}</a>
+      <div class="route-wrapper" *ngFor="let route of routes" [routerLink]="route.route">
+        <a class="link">{{route.text}}</a>
       </div>
     </div>
   </div>

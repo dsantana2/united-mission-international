@@ -5,11 +5,19 @@
   background-color: rgb(245, 245, 245);
   display: flex;
 
+  figure {
+    width: 50%;
+    margin: 0;
+  }
+
   img {
-    width: calc(100% /2);
-    height: 618px;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transform: scale(1);
+    height: -webkit-fill-available;
   }
 
   .our-mission {
@@ -20,21 +28,23 @@
     display: flex;
 
     .txt-wrapper {
-      h1 {
+      .title {
         width: 489px;
         font-size: 30px;
         color: #6d7377;
         padding-bottom: 30px;
-        font-family: futura-lt-w01-book, sans-serif;
+        font-family: poppins-semibold, poppins, sans-serif;
         margin: 0;
+        display: block;
       }
 
       p,
       span {
         width: 489px;
-        color: #6d7377;
+        color: #aaaaaa;
         font-family: futura-lt-w01-book, sans-serif;
         font-size: 18px;
+        line-height: 1.46em;
 
       }
 
@@ -50,7 +60,7 @@
         align-items: center;
         border-radius: 100px;
         cursor: pointer;
-
+        text-decoration: none;
 
         &:hover {
           background-color: #6884b9;

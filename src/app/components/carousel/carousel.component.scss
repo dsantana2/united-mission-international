@@ -16,22 +16,44 @@
 
 .txt {
   color: white;
+  list-style: none;
 
   &.header {
-    font-size: 60px;
+    font-size: 57px;
     width: 850px;
     display: block;
     margin: 0 auto;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   &.description {
     font-size: 24px;
     width: 732px;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
     margin: 0 auto;
+  }
+
+  &.button {
+    width: fit-content;
+    height: 44px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #fff;
+    display: block;
+    text-align: center;
+    color: #000;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 }
 
@@ -46,7 +68,9 @@
   align-items: center;
   justify-content: center;
 
-  .image-text-positioning {}
+  .image-text-positioning {
+    position: relative;
+  }
 
 }
 
@@ -130,7 +154,22 @@
   -ms-animation: fadeIn ease-out .5s forwards;
   animation-delay: .8s;
   position: relative;
+}
 
+.fade-in-text-three {
+  opacity: 0;
+  list-style-type: none;
+  animation: fadeIn ease-out .5s forwards;
+  -webkit-animation: fadeIn ease-out .5s forwards;
+  -moz-animation: fadeIn ease-out .5s forwards;
+  -o-animation: fadeIn ease-out .5s forwards;
+  -ms-animation: fadeIn ease-out .5s forwards;
+  animation-delay: 1.2s;
+  position: relative;
+}
+
+.fade-in-text-two {
+  list-style-type: none;
 }
 
 /* fading text animation */

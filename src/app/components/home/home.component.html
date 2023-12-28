@@ -1,24 +1,33 @@
-<div [style.height.px]="viewPortHeight" #widgetsContent class="home-page">
-  <section id="carosel" #carosel>
-    <div id="logo" #logoElement class="united-mission-logo">
-      <div class="logo-img"></div>
-    </div>
-    <app-navigation-bar class="nav"></app-navigation-bar>
-    <app-carousel [slides]="images" [displayImageText]="true"></app-carousel>
-  </section>
-  <section id="hope">
-    <app-bring-hope></app-bring-hope>
-  </section>
-  <section id="next-mission" #nextmission>
-    <app-next-mission></app-next-mission>
-  </section>
-  <section id="bible" #bible>
-    <app-bible-verse></app-bible-verse>
-  </section>
-  <section id="mission" #mission>
-    <app-our-mission></app-our-mission>
-  </section>
-  <section id="footer">
-    <app-footer></app-footer>
-  </section>
+<div appHomePageScrollAction style="display: block; overflow: inherit;">
+  <div [style.height.px]="viewPortHeight" #widgetsContent class="home-page" id="home">
+    <section id="carosel" #section>
+      <div id="logo" #logoElement class="united-mission-logo">
+        <div class="logo-img"></div>
+      </div>
+      <app-navigation-bar class="nav"></app-navigation-bar>
+      <app-carousel [slides]="images" [displayImageText]="true"></app-carousel>
+    </section>
+    <section id="hope" #section>
+      <app-bring-hope></app-bring-hope>
+    </section>
+    <!-- <section id="next-mission" #nextmission>
+      <app-next-mission></app-next-mission>
+    </section> -->
+    <section id="bible" #section>
+      <app-bible-verse></app-bible-verse>
+    </section>
+    <section id="mission" #section>
+      <app-our-mission></app-our-mission>
+    </section>
+    <section>
+      <app-footer></app-footer>
+    </section>
+    <!-- <div class="page-dots-wrapper">
+      <div class="page-dots">
+        <div *ngFor="let dot of sectionsList" class="dots-wrapper">
+          <div [ngClass]="{'selected': dot.id === selectedView}" class="dot"></div>
+        </div>
+      </div>
+    </div> -->
+  </div>
 </div>

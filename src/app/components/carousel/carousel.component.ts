@@ -25,7 +25,7 @@ import {
 	]
 })
 export class CarouselComponent implements OnInit {
-	@Input() slides: { src: string, text: { header: string, description: string } }[];
+	@Input() slides: { left?: number, src: string, text: { header: string, description: string, width?: number }, button?: { text: string, link: string } }[];
 	@Input() displayImageText: boolean;
 	currentSlide = 0;
 	@ViewChild('imageSlider', { static: false }) imageSlider: ElementRef;
@@ -36,7 +36,7 @@ export class CarouselComponent implements OnInit {
 
 	ngOnInit() {
 		this.caroselHeight = window.innerHeight + 'px';
-		this.preloadImages(); // for the demo
+		this.preloadImages();
 	}
 
 	ngAfterViewInit(): void {
@@ -44,7 +44,7 @@ export class CarouselComponent implements OnInit {
 			this.caroselHeight = window.innerHeight - (this.elementsService.getNavigationBarElementData().height +
 				this.elementsService.getLogoElementData().height) + 'px';
 		})
-		this.startCarosel();
+		// this.startCarosel();
 	}
 
 	preloadImages() {
@@ -54,34 +54,32 @@ export class CarouselComponent implements OnInit {
 	}
 
 	startCarosel() {
-		if (!this.caroselIntervalId) {
-			this.caroselIntervalId = setInterval(() => {
-				this.onNextClick('');
-			}, 5000);
-		}
+		// if (!this.caroselIntervalId) {
+		// 	this.caroselIntervalId = setInterval(() => {
+		// 		this.onNextClick();
+		// 	}, 5000);
+		// }
 	}
 
-	onPreviousClick(eventType: string) {
-		if (eventType == 'click') {
-			clearInterval(this.caroselIntervalId);
-			this.caroselIntervalId = undefined;
-			this.startCarosel();
-		}
+	stopCarosel() {
+		clearInterval(this.caroselIntervalId);
+		this.caroselIntervalId = undefined;
+	}
 
+	onPreviousClick() {
 		const previous = this.currentSlide - 1;
 		this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
-		console.log("previous clicked, new current slide is: ", this.currentSlide);
 	}
 
-	onNextClick(eventType: string) {
-		if (eventType == 'click') {
-			clearInterval(this.caroselIntervalId);
-			this.caroselIntervalId = undefined;
-			this.startCarosel();
+	onCaroselButtonClicked(slide: any) {
+		if (slide.button && slide.button.text === 'Contact Us') {
+			window.location.href = "mailto:info@unitedmi.org";
 		}
+	}
+
+	onNextClick() {
 		const next = this.currentSlide + 1;
 		this.currentSlide = next === this.slides.length ? 0 : next;
-		console.log("next clicked, new current slide is: ", this.currentSlide);
 	}
 
 	@HostListener('window:resize', ['$event'])

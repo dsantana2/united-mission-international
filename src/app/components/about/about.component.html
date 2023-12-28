@@ -1,17 +1,81 @@
-<div class="about-page">
-  <h3>About Us</h3>
-  <p>United Mission International Relief works with dedicated volunteering specialists that are familiarized with the
-    areas of extreme need we have targeted to provide with our service. We work with different kinds of missions and we
-    like to treat each mission with special individual attention. At United Mission we strive to get the most skilled
-    volunteers in their area of concentration. Our construction volunteers are skilled at building and repairing houses,
-    schools, and community structures. Our health volunteers are experts at providing education to help prevent unwanted
-    pregnancies, and battle common issues like diabetes, high blood pressure, and other diseases. Our medical volunteers
-    are trained to give free medical attention to those that are unable to obtain medical assistance. Our field
-    specialist volunteers have unique relationships with local governments to facilitate assistance projects, and are
-    dedicated to help others to the best of their ability.</p>
-  <p>United Mission International is committed to work towards the development of short and long-term solutions with
-    those affected, and eliminate extreme poverty in the poorest and most vulnerable communities of many countries. We
-    are not interested in having our donors’ money sitting in an account while so many are in need. Instead, we are
-    devoted to use all donations wisely to work hard at delivering the needed aid to get the results the people need.
-  </p>
+<div [@myAnimationTrigger]="state" class="about-page">
+  <div *ngIf="showImage" [style.height.px]="viewPortHeight" class="images-wrapper">
+    <div class="kidz-one"></div>
+    <div class="kidz-two"></div>
+  </div>
+  <div class="about-me-page-content">
+    <div class="about-content">
+      <h3>About Us</h3>
+      <p>United Mission International Relief works with dedicated volunteering specialists that are familiarized with
+        the
+        areas of extreme need we have targeted to provide with our service. We work with different kinds of missions and
+        we
+        like to treat each mission with special individual attention. At United Mission we strive to get the most
+        skilled
+        volunteers in their area of concentration. Our construction volunteers are skilled at building and repairing
+        houses,
+        schools, and community structures. Our health volunteers are experts at providing education to help prevent
+        unwanted
+        pregnancies, and battle common issues like diabetes, high blood pressure, and other diseases. Our medical
+        volunteers
+        are trained to give free medical attention to those that are unable to obtain medical assistance. Our field
+        specialist volunteers have unique relationships with local governments to facilitate assistance projects, and
+        are
+        dedicated to help others to the best of their ability.</p>
+      <p>United Mission International is committed to work towards the development of short and long-term solutions with
+        those affected, and eliminate extreme poverty in the poorest and most vulnerable communities of many countries.
+        We
+        are not interested in having our donors’ money sitting in an account while so many are in need. Instead, we are
+        devoted to use all donations wisely to work hard at delivering the needed aid to get the results the people
+        need.
+      </p>
+    </div>
+    <div class="gallery-wrapper">
+      <div class="image-section">
+        <div *ngFor="let img of images; let i = index" (click)="openMediaViewer(i)" class="img-wrapper"><img
+            [src]="img.src"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-we-serve">
+    <div class="title-wrapper"><span class="why-we-serve-lbl">Why We Serve?</span></div>
+    <div class="because-we-care-wrapper">
+      <div class="because-we-care">
+        <div class="content">
+          <h1>Because We Care</h1>
+          <p>At United Mission International Relief, we are inspired by the Lord's message of compassion and service. To
+            serve others is to love others as the Lord loved us.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="because-it-gives-porpuse-wrapper">
+      <div class="because-it-gives-porpuse">
+        <div class="content">
+          <h1>Because It Gives Us Purpose</h1>
+          <p>Our goal is to be compassionate servants of Christ. We can best achieve this goal by building strong
+            communities and helping those that suffer. Our staff is motivated by sincere desires to serve our neighbors
+            in need.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="who-we-serve">
+    <div class="content">
+      <h1>Who We Serve</h1>
+      <p>We serve those in need. If we encounter a family without a home, we will find a home or build a home. If we
+        see
+        our elderly without food, we will feed them. If we encounter a family suffering from domestic violence, we
+        will
+        shelter them. If we find our community's educational systems struggling, we will do what we have to do to
+        ensure
+        facilities, systems, and staff that are elevated to provide strong education.
+        ​</p>
+      <span>Join us in making a real difference.</span>
+      <a [routerLink]="'/donate'" class="donate-btn">Donate Now</a>
+    </div>
+  </div>
 </div>

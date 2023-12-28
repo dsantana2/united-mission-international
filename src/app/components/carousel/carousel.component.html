@@ -1,25 +1,28 @@
 <div #imageSlider [style.height]="caroselHeight" class="carousel">
   <ng-container *ngFor="let slide of slides; let i = index">
-    <div *ngIf="i === currentSlide" @carouselAnimation class="slide-wrapper">
+    <div *ngIf="i === currentSlide" @carouselAnimation (mouseleave)="startCarosel()" (mouseenter)="stopCarosel()"
+      class="slide-wrapper">
       <img [src]="slide.src" class="slide" />
       <div *ngIf="displayImageText" class="image-text">
-        <div class="image-text-positioning">
+        <div class="image-text-positioning" [style.left.px]="slide.left">
           <ul id="menu">
             <li class="txt fade-in-text">
               <span class="txt header">{{slide.text.header}}</span>
             </li>
-            <li class="txt fade-in-text-two"><span class="txt description">{{slide.text.description}}</span></li>
+            <li class="txt fade-in-text-two"><span [style.width.px]="slide.text.width"
+                class="txt description">{{slide.text.description}}</span></li>
+            <li class="txt fade-in-text-three"><a *ngIf="slide.button" (click)="onCaroselButtonClicked(slide)"
+                [routerLink]="slide.button.link" class="txt button">{{slide.button.text}}</a></li>
           </ul>
-
         </div>
       </div>
     </div>
   </ng-container>
 
-  <button class="control prev" (click)="onPreviousClick('click')">
+  <button class="control prev" (click)="onPreviousClick()">
     <span class="arrow left"></span>
   </button>
-  <button class="control next" (click)="onNextClick('click')">
+  <button class="control next" (click)="onNextClick()">
     <span class="arrow right"></span>
   </button>
 </div>

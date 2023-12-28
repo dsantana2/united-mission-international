@@ -15,9 +15,18 @@ import { NextMissionComponent } from './components/next-mission/next-mission.com
 import { AnimatedTextComponent } from './components/animated-text/animated-text.component';
 import { MissionsComponent } from './components/missions/missions.component';
 import { BibleVerseComponent } from './components/bible-verse/bible-verse.component';
-import { BringHopeComponent } from './components/bring-home/bring-hope.component';
+import { BringHopeComponent } from './components/bring-hope/bring-hope.component';
 import { HomePageScrollActionDirective } from './directive/home-page-scroll-action.directive';
 import { OurMissionComponent } from './components/our-mission/our-mission.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { MediaViewerComponent } from './components/media-viewer/media-viewer.component';
+import {
+  MatDialogModule
+} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -37,12 +46,19 @@ import { OurMissionComponent } from './components/our-mission/our-mission.compon
     BibleVerseComponent,
     BringHopeComponent,
     HomePageScrollActionDirective,
-    OurMissionComponent
+    OurMissionComponent,
+    SnackBarComponent,
+    MediaViewerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

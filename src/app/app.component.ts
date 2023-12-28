@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ElementsService } from './services/elements.service';
 import { NavigationEnd, Router } from '@angular/router';
 // import * as AWS from 'aws-sdk';
@@ -9,10 +9,16 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('logoElement') logoElement?: ElementRef;
   route?: string;
   constructor(private elementsService: ElementsService, private router: Router) { }
+  ngAfterViewInit(): void {
+    this.elementsService.logoElementData = {
+      height: this.logoElement.nativeElement.getBoundingClientRect().height,
+      width: this.logoElement.nativeElement.getBoundingClientRect().width
+    };
+  }
   ngOnInit(): void {
     // AWS.config.update({
     //   region: 'US East (Ohio) us-east-2',

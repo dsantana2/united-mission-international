@@ -5,6 +5,24 @@
     margin: 0 auto;
     margin-bottom: 80px;
 
+    h1 {
+      font-size: 30px;
+      font-family: poppins-semibold, poppins, sans-serif;
+      font-weight: 100;
+      color: #555555;
+      margin-top: 29px;
+      margin-bottom: 11px;
+    }
+
+    span {
+      font-family: futura-lt-w01-book, sans-serif;
+      font-weight: 100;
+      font-size: 18px;
+      color: #555555;
+      display: block;
+      margin-bottom: 50px;
+    }
+
     .input-fields-wrapper {
       width: 100%;
       margin-top: 20px;
@@ -18,12 +36,19 @@
         display: block;
         width: 100%;
         height: 30px;
+        padding: 5px;
       }
 
       button {
         display: block;
         width: 100%;
-        height: 40px;
+        height: 45px;
+        background-color: #090e20;
+        color: #ffff;
+        cursor: pointer;
+        font-family: helvetica-w01-light, helvetica-w02-light, sans-serif;
+        font-size: 16px;
+        font-weight: 100;
       }
 
       .message {
@@ -31,11 +56,14 @@
         resize: none;
         margin-bottom: 10px;
         height: 150px;
+        padding: 5px;
+        font-family: futura-lt-w01-book, sans-serif;
       }
 
       .subject {
         margin-bottom: 10px;
         width: 100%;
+        font-family: futura-lt-w01-book, sans-serif;
       }
 
       .name-email-wrapper {
@@ -44,6 +72,7 @@
 
         input {
           width: 50%;
+          font-family: futura-lt-w01-book, sans-serif;
         }
 
         .name {

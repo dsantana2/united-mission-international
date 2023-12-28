@@ -1,11 +1,14 @@
-<div class="team-page">
+<div [@myAnimationTrigger]="state" class="team-page">
   <h2 class="team-lbl">Meet The Team</h2>
   <div class="team-list">
     <div class="team-member-wrapper" *ngFor="let member of teamMemberArr">
       <div class="team-member">
-        <div class="image-holder"></div>
-        <span>{{member.name}}</span>
-        <span>{{member.position}}</span>
+        <div class="image-holder">
+          <img [src]="member.src" />
+
+        </div>
+        <span class="name">{{member.name}}</span>
+        <span class="position">{{member.position}}</span>
       </div>
     </div>
   </div>
