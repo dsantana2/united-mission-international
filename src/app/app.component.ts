@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ElementsService } from './services/elements.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { MobileMenuService } from './services/mobile-menu.service';
 // import * as AWS from 'aws-sdk';
 // declare const Buffer
 
@@ -12,14 +13,39 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('logoElement') logoElement?: ElementRef;
   route?: string;
-  constructor(private elementsService: ElementsService, private router: Router) { }
+  mobileMenuOpen: boolean = false;
+  routes: { text: string, route: string }[] = [
+    { text: 'Home', route: '' },
+    { text: 'About', route: '/about' },
+    { text: 'Meet the team', route: '/meet-the-team' },
+    // { text: 'Missions', route: '/missions' },
+    { text: 'Donate', route: '/donate' },
+    { text: 'Contact', route: '/contact' }
+  ];
+
+  constructor(private elementsService: ElementsService, private router: Router, private mobileMenuService: MobileMenuService) { }
+
   ngAfterViewInit(): void {
     this.elementsService.logoElementData = {
       height: this.logoElement.nativeElement.getBoundingClientRect().height,
       width: this.logoElement.nativeElement.getBoundingClientRect().width
     };
   }
+
+  showHideMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+
+    if (this.mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scrollp";
+    }
+  }
+
   ngOnInit(): void {
+    this.mobileMenuService.openHideMobileMenu.subscribe(() => {
+      this.showHideMobileMenu();
+    });
     // AWS.config.update({
     //   region: 'US East (Ohio) us-east-2',
     //   accessKeyId: 'AKIA2YF5OWU2QAAXST2D',
@@ -32,5 +58,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     })
   }
+
   title = 'united-mission-international';
 }

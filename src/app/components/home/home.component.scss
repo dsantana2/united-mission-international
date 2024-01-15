@@ -46,9 +46,19 @@
   .nav {
     z-index: 1000;
     position: relative;
+    display: block;
   }
 }
 
 .home-page section {
   scroll-snap-align: start;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .home-page {
+    .nav {
+      display: none;
+    }
+  }
 }

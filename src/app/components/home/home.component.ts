@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren, ChangeDetectorRef } from '@angular/core';
 import { ElementsService } from 'src/app/services/elements.service';
-import { ViewportScroller } from '@angular/common';
+import { MobileMenuService } from '../../services/mobile-menu.service';
 import * as AWS from 'aws-sdk';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
 			button: { text: 'Contact Us', link: 'mailto:info@unitedmi.org' }
 		}];
 
-	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef) { }
+	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef, private mobileMenuService: MobileMenuService) { }
 
 	ngOnInit(): void {
 		this.viewPortHeight = this.elementsService.getViewPortData().height;
@@ -94,6 +94,10 @@ export class HomeComponent implements OnInit {
 		};
 
 		this.cd.detectChanges();
+	}
+
+	showHideMobileMenu() {
+		this.mobileMenuService.openHideMobileMenu.next({});
 	}
 
 	loadSectionList() {

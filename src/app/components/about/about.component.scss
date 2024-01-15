@@ -1,5 +1,9 @@
 .about-page {
 
+  .mobile-kidz-images {
+    display: none;
+  }
+
   .images-wrapper {
     position: fixed;
     top: 0;
@@ -201,7 +205,7 @@
             font-size: 30px;
             color: #003399;
             font-weight: bold;
-            font-weight: poppins-semibold, poppins, sans-serif;
+            font-family: poppins-semibold, poppins, sans-serif;
           }
 
           p {
@@ -210,6 +214,32 @@
             line-height: 1.5em;
           }
         }
+      }
+    }
+
+    .mobile-kidz-images {
+      display: block;
+      width: 100%;
+      height: 500px;
+
+      .kidz-one {
+        width: 100%;
+        height: 250px;
+        background-image: url(../../../assets/images/kidz-one.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+      }
+
+      .kidz-two {
+        width: 100%;
+        height: 250px;
+        background-image: url(../../../assets/images/kidz-two.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
       }
     }
 
@@ -233,7 +263,7 @@
             font-size: 30px;
             color: #003399;
             font-weight: bold;
-            font-weight: poppins-semibold, poppins, sans-serif;
+            font-family: poppins-semibold, poppins, sans-serif;
           }
 
           p {
@@ -244,6 +274,103 @@
           }
         }
 
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-page {
+
+    .images-wrapper {
+      display: none;
+    }
+
+    .why-we-serve {
+
+      .title-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .why-we-serve-lbl {
+          font-size: 21px;
+        }
+      }
+
+      .because-we-care-wrapper {
+        height: auto;
+
+        .because-we-care {
+          width: 100%;
+
+          .content {
+            width: 100%;
+            padding: 20px;
+
+            h1 {
+              font-size: 21px;
+            }
+
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .because-it-gives-porpuse-wrapper {
+        height: auto;
+
+        .because-it-gives-porpuse {
+          float: none;
+          width: 100%;
+
+          .content {
+            width: 100%;
+            padding: 20px;
+
+            h1 {
+              font-size: 21px;
+            }
+
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .who-we-serve {
+      height: auto;
+      padding: 20px;
+    }
+
+    .about-me-page-content {
+      padding: 20px;
+
+      .about-content {
+        width: 100%;
+      }
+
+      .gallery-wrapper {
+        width: 100%;
+
+        .image-section {
+          width: 100%;
+          padding-bottom: 0px;
+
+          .img-wrapper {
+            width: 100%;
+            height: 100%;
+
+            &:nth-child(even) {
+              padding-left: 0px;
+            }
+
+            img {}
+          }
+        }
       }
     }
   }

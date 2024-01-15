@@ -1,0 +1,55 @@
+.side-nav {
+  width: 0%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  z-index: 200;
+  background-color: #00339a;
+  overflow: hidden;
+
+  &.open {
+    width: 65%;
+    box-shadow: 28px 11px 59px 16px rgba(0, 0, 0, 0.79);
+    -webkit-box-shadow: 28px 11px 59px 16px rgba(0, 0, 0, 0.79);
+    -moz-box-shadow: 28px 11px 59px 16px rgba(0, 0, 0, 0.79);
+    -webkit-transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+    -moz-transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+    -o-transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+    transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+  }
+
+  &.close {
+    width: 0%;
+    box-shadow: 28px 11px 59px 16px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: 28px 11px 59px 16px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 28px 11px 59px 16px rgba(0, 0, 0, 0);
+    -webkit-transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+    -moz-transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+    -o-transition: width 3s ease-in-out, box-shadow, .3s ease-in-out;
+    transition: width .3s ease-in-out, box-shadow, .3s ease-in-out;
+  }
+
+  .navigation-wrapper {
+    padding: 20px;
+    padding-top: 150px;
+    width: 150px;
+
+    .route-wrapper {
+      padding: 10px;
+
+      .link {
+        text-decoration: none;
+        font-family: 'open sans', sans-serif;
+        color: rgba(255, 255, 255);
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+}

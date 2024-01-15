@@ -6,8 +6,10 @@
     <form [formGroup]="emailForm">
       <div class="input-fields-wrapper">
         <div class="name-email-wrapper">
-          <input formControlName="name" placeholder="Name" class="name" type="text" name="name">
-          <input formControlName="email" placeholder="Email" class="email" type="text" name="email">
+          <div class="input"><input formControlName="name" placeholder="Name" class="name" type="text" name="name">
+          </div>
+          <div class="input"><input formControlName="email" placeholder="Email" class="email" type="text" name="email">
+          </div>
         </div>
         <div class="flex"><input formControlName="subject" placeholder="Subject" class="subject" type="text"
             name="subject"></div>

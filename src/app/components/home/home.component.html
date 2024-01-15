@@ -2,6 +2,7 @@
   <div [style.height.px]="viewPortHeight" #widgetsContent class="home-page" id="home">
     <section id="carosel" #section>
       <div id="logo" #logoElement class="united-mission-logo">
+        <div (click)="showHideMobileMenu()" class="mobile-nav"></div>
         <div class="logo-img"></div>
       </div>
       <app-navigation-bar class="nav"></app-navigation-bar>

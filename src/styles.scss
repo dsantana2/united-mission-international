@@ -187,6 +187,10 @@ body {
   font-family: poppins-semibold, poppins, sans-serif;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .united-mission-logo {
   height: 122px;
   background-color: #fff;
@@ -199,6 +203,37 @@ body {
     background-size: 300px;
     background-position: center;
     height: 122px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .mobile-nav {
+    display: block;
+    background-image: url(./assets/icons/menu-icon.png);
+    height: 30px;
+    width: 30px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    &.open {
+      background-image: url(./assets/icons/icons8-close-50.png);
+      background-repeat: no-repeat;
+    }
+  }
+
+  .united-mission-logo {
+    height: 150px;
+
+    .logo-img {
+      height: 150px;
+      background-size: 350px;
+    }
+
   }
 }
 

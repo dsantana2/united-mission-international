@@ -29,6 +29,10 @@
     right: 0;
     bottom: 65px;
     margin: 0 auto;
+
+    &.one {
+      display: none;
+    }
   }
 
   .txt {
@@ -37,10 +41,12 @@
   }
 
   .footer-details {
-    width: 850px;
+    max-width: 850px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     text-align: center;
+    overflow: hidden;
 
     .contact-us {
       width: calc(100% /2);
@@ -106,8 +112,8 @@
 
         .twitter-x-icon {
           background-image: url(../../../assets/icons/twitter-x-icon.svg);
-          height: 50px;
-          width: 45px;
+          height: 46px;
+          width: 42px;
           background-repeat: no-repeat;
           background-size: contain;
           padding-right: 15px;
@@ -128,8 +134,8 @@
 
         .instagram-icon {
           background-image: url(../../../assets/icons/instagram-icon.png);
-          height: 50px;
-          width: 45px;
+          height: 46px;
+          width: 42px;
           background-repeat: no-repeat;
           background-size: contain;
           padding-right: 15px;
@@ -140,8 +146,8 @@
         .snapchat-icon {
           background-image: url(../../../assets/icons/youtube-icon.png);
           margin-right: 13px;
-          height: 55px;
-          width: 50px;
+          height: 53px;
+          width: 46px;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -150,6 +156,84 @@
           display: block;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .footer {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+
+
+    .footer-wrapper {
+
+      .footer-details {
+        display: block;
+
+        .contact-us {
+          width: 100%;
+
+          .txt {
+            font-size: 20px;
+          }
+
+          .email-wrapper {
+            left: 0;
+            width: fit-content;
+            display: block;
+
+            .email-details {
+              text-align: center;
+            }
+
+            .email-icon {
+              padding-right: 0px;
+              margin: 0 auto;
+              margin-bottom: 10px;
+              height: 40px;
+              width: 40px;
+            }
+          }
+        }
+
+        .follow-us {
+          width: 100%;
+          margin-top: 20px;
+
+          .txt {
+            font-size: 20px;
+          }
+
+          .social-media-icons {
+            left: 0;
+            width: fit-content;
+            margin: 0 auto;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .border {
+      position: relative;
+      bottom: 0;
+      margin-top: 20px;
+
+      &.one {
+        display: block;
+      }
+    }
+
+    .united-mission-txt {
+      position: relative;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 12px;
     }
   }
 }
