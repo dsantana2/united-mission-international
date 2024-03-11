@@ -54,9 +54,18 @@
   scroll-snap-align: start;
 }
 
+@media only screen and (max-width: 1024px) {
+
+  .home-page {
+    scroll-snap-type: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
 
   .home-page {
+    scroll-snap-type: none;
+
     .nav {
       display: none;
     }

@@ -12,7 +12,7 @@ export class NavigationBarComponent implements AfterViewInit {
 		{ text: 'Home', route: '' },
 		{ text: 'About', route: '/about' },
 		{ text: 'Meet the team', route: '/meet-the-team' },
-		// { text: 'Missions', route: '/missions' },
+		{ text: 'Missions', route: '/missions' },
 		{ text: 'Donate', route: '/donate' },
 		{ text: 'Contact', route: '/contact' }
 	];

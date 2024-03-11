@@ -1,0 +1,17 @@
+<div class="viewer">
+  <a (click)="closeModal()" class="close"></a>
+
+  <div id="slider" #slider class="slider">
+    <div #sliderwrapper class="wrapper">
+      <div id="slides" class="slides" #sliderItems>
+        <div #slide class="slide" *ngFor="let slide of slides; let i = index">
+          <div class="slide-wrapper">
+            <img [src]="slide.src" class="img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <a id="prev" #prev (click)="shiftSlide(-1, '')" class="control prev"></a>
+    <a id="next" #next (click)="shiftSlide(1, '')" class="control next"></a>
+  </div>
+</div>

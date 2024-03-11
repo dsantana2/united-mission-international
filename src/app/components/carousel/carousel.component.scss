@@ -240,3 +240,62 @@
     transform: rotate(225deg);
   }
 }
+
+@media only screen and (max-width: 1024px) {
+
+  .carousel {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .txt.header {
+    font-size: 43px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel {
+    height: 330px;
+
+    .slide-wrapper {
+      .img-overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .2;
+      }
+    }
+  }
+
+  .txt {
+    .header {
+      font-size: 25px;
+      width: auto;
+    }
+
+    .description {
+      font-size: 18px;
+      width: auto;
+    }
+  }
+
+
+  .control {
+    padding: 30px;
+  }
+
+  .image-text {
+    .image-text-positioning {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      ul {
+        display: contents;
+        margin: 0 auto;
+      }
+    }
+  }
+}

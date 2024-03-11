@@ -1,3 +1,61 @@
-<div class="missions-page">
-
+<div [style.height.px]="viewPortHeight" class="missions-page"
+  [ngClass]="{'page': layoutView == 'page', 'list': layoutView == 'list'}">
+  <!-- <div class="header-navigation">
+    <div id="logo" #logoElement class="united-mission-logo">
+      <div (click)="showHideMobileMenu()" class="mobile-nav"></div>
+      <div class="logo-img"></div>
+    </div>
+    <app-navigation-bar class="nav"></app-navigation-bar>
+    <div class="view-option-wrapper">
+      <div [ngClass]="{'active' : layoutView == 'page' }" (click)="changeLayout('page')" class="page">Page View</div>
+      <div [ngClass]="{'active' : layoutView == 'list' }" (click)="changeLayout('list')" class="list">List View</div>
+    </div>
+  </div> -->
+  <div class="sections-wrapper">
+    <section id="{{mission.country}}" #section *ngFor="let mission of missions; let i = index">
+      <div *ngIf="i == 0" class="navigation">
+        <div id="logo" #logoElement class="united-mission-logo">
+          <div (click)="showHideMobileMenu()" class="mobile-nav"></div>
+          <div class="logo-img"></div>
+        </div>
+        <app-navigation-bar class="nav"></app-navigation-bar>
+        <!-- <div *ngIf="mission.view == 'cover'" class="view-option-wrapper">
+          <div [ngClass]="{'active' : layoutView == 'page' }" (click)="changeLayout('page')" class="page">Page View
+          </div>
+          <div [ngClass]="{'active' : layoutView == 'list' }" (click)="changeLayout('list')" class="list">List View
+          </div>
+        </div> -->
+      </div>
+      <div *ngIf="mission.view == 'cover'"
+        [style.height.px]="(i == 0 && layoutView == 'page' ? missionLayoutHeight - navigationHeight : missionLayoutHeight)"
+        class="center-page">
+        <div class="mission-content">
+          <h1 class="location">Kenya, Africa</h1>
+          <h4 class="date">8/21/1994</h4>
+          <div (click)="mission.view = 'gallery'" class="image-wrapper">
+            <img
+              src="https://static.wixstatic.com/media/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg/v1/fit/w_1187,h_791,q_90/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg" />
+          </div>
+          <span *ngIf="layoutView == 'page'">We have been blessed to get to know amazing people through our mission
+            trips
+            across Africa and Central
+            America.</span>
+        </div>
+      </div>
+      <div *ngIf="mission.view == 'gallery' && layoutView == 'page'" class="gallery"
+        [style.height.px]="(i == 0 ? viewPortHeight - navigationHeight : viewPortHeight)">
+        <a (click)="mission.view = 'cover'" class="close"></a>
+        <app-gallery [gallery_design]="'page'" [gallery]="gallery"></app-gallery>
+      </div>
+    </section>
+    <section *ngIf="layoutView=='page'" class="section-footer">
+      <app-footer></app-footer>
+    </section>
+  </div>
+  <!-- <div *ngIf="showGallery && layoutView == 'list'" class="gallery"
+    [style.height.px]="(i == 0 ? viewPortHeight - navigationHeight : viewPortHeight)">
+    <a (click)="mission.view = 'cover'" class="close"></a>
+    <app-gallery [gallery_design]="'page'" [gallery]="gallery"></app-gallery>
+  </div> -->
+  <app-footer *ngIf="layoutView=='list'"></app-footer>
 </div>

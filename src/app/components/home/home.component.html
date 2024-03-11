@@ -1,4 +1,4 @@
-<div appHomePageScrollAction style="display: block; overflow: inherit;">
+<div>
   <div [style.height.px]="viewPortHeight" #widgetsContent class="home-page" id="home">
     <section id="carosel" #section>
       <div id="logo" #logoElement class="united-mission-logo">
@@ -11,11 +11,11 @@
     <section id="hope" #section>
       <app-bring-hope></app-bring-hope>
     </section>
-    <!-- <section id="next-mission" #nextmission>
-      <app-next-mission></app-next-mission>
-    </section> -->
     <section id="bible" #section>
       <app-bible-verse></app-bible-verse>
+    </section>
+    <section id="next-mission" #nextmission>
+      <app-next-mission></app-next-mission>
     </section>
     <section id="mission" #section>
       <app-our-mission></app-our-mission>

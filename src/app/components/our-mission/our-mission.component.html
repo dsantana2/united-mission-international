@@ -1,6 +1,7 @@
 <div class="our-mission-section">
   <figure>
-    <img src="https://d337lrhmtj9qpq.cloudfront.net/kids-cloths.webp" />
+    <img *ngIf="!isMobile" src="https://d337lrhmtj9qpq.cloudfront.net/kids-cloths.webp" />
+    <img *ngIf="isMobile" src="https://d337lrhmtj9qpq.cloudfront.net/kids-image-2.webp" />
   </figure>
   <div class="our-mission">
     <div class="txt-wrapper">

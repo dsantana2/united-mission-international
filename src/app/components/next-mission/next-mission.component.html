@@ -3,6 +3,40 @@
     <div class="next-mission-pages-wrapper">
       <div [style.width.px]="viewPortWidth" class="left-page">
         <a (click)="scrollRight()" class="close"></a>
+        <app-gallery [gallery]="gallery"></app-gallery>
+      </div>
+      <div [style.width.px]="viewPortWidth" class="center-page">
+        <div class="controls-wrapper">
+          <button class="control prev" (click)="scrollLeft()">
+            <span class="arrow left"></span>
+          </button>
+          <button class="control next" (click)="scrollRight()">
+            <span class="arrow right"></span>
+          </button>
+        </div>
+        <div class="mission-content">
+          <h1 class="location">Kenya, Africa</h1>
+          <h4 class="date">8/21/1994</h4>
+          <div class="image-wrapper">
+            <img
+              src="https://static.wixstatic.com/media/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg/v1/fit/w_1187,h_791,q_90/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg" />
+          </div>
+          <span>We have been blessed to get to know amazing people through our mission trips across Africa and Central
+            America.</span>
+          <a class="missions-link" [routerLink]="'/missions'">View All Our Missions</a>
+        </div>
+      </div>
+      <div [style.width.px]="viewPortWidth" class="right-page">
+        <a (click)="scrollLeft()" class="close"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div [style.height.px]="viewPortHeight" class="next-mission-page">
+  <div class="scroll-div" #widgetsContent>
+    <div class="next-mission-pages-wrapper">
+      <div [style.width.px]="viewPortWidth" class="left-page">
+        <a (click)="scrollRight()" class="close"></a>
         <app-animated-text [text]="'Our Destination'"></app-animated-text>
       </div>
       <div [style.width.px]="viewPortWidth" class="center-page">
@@ -22,4 +56,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

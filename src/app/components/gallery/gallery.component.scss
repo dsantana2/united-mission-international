@@ -1,0 +1,75 @@
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+
+  &.page {
+
+    .mission-content {
+      .gallery-wrapper {
+        .image {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+
+  }
+
+  .mission-content {
+    z-index: 1;
+
+    .gallery-lbl {
+      font-size: 37px;
+      font-family: poppins-semibold, poppins, sans-serif;
+      opacity: .6;
+    }
+
+    span {
+      font-family: futura-lt-w01-book, sans-serif;
+      font-size: 18px;
+      color: #aaaaaa;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .missions-link {
+      font-family: poppins-semibold, poppins, sans-serif;
+      font-size: 19px;
+      padding-top: 40px;
+      opacity: .6;
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .gallery-wrapper {
+    display: block;
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    overflow: scroll;
+    height: 600px;
+    white-space: normal;
+
+    .image {
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+      background-color: #aaaaaa;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      img {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: cover;
+        background-position: center;
+      }
+    }
+  }
+}

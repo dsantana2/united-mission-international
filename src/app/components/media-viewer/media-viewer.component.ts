@@ -26,6 +26,7 @@ import { fadeIn, fadeOut, scaleIn, scaleOut } from '../carousel/carosel.animatio
 export class MediaViewerComponent implements OnInit {
   slides: { src: string, text?: string }[];
   currentSlide = 0;
+  layoutView: 'image' | 'description' = 'image';
 
   constructor(public dialogRef: MatDialogRef<MediaViewerComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
@@ -37,6 +38,10 @@ export class MediaViewerComponent implements OnInit {
 
   closeModal() {
     this.dialogRef.close();
+  }
+
+  changeLayout(layoutView: 'image' | 'description') {
+    this.layoutView = layoutView;
   }
 
   onPreviousClick() {

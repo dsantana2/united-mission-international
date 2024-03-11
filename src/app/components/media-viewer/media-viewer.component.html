@@ -1,6 +1,11 @@
 <div class="media-viewer">
   <a (click)="closeModal()" class="close"></a>
   <div class="carosel-wrapper">
+    <div class="view-options">
+      <div [ngClass]="{'active' : layoutView == 'image' }" (click)="changeLayout('image')" class="image">Image</div>
+      <div [ngClass]="{'active' : layoutView == 'description' }" (click)="changeLayout('description')"
+        class="description">Description</div>
+    </div>
     <div class="carousel">
       <ng-container *ngFor="let slide of slides; let i = index">
         <div *ngIf="i === currentSlide" @carouselAnimation class="slide-wrapper">

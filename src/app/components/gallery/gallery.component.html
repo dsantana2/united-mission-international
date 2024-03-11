@@ -1,0 +1,13 @@
+<div class="gallery" [ngClass]="{'page': gallery_design == 'page'}">
+  <div class="mission-content">
+    <h1 class="gallery-lbl">Gallery</h1>
+    <span>We have been blessed to get to know amazing people through our mission trips across Africa and Central
+      America.</span>
+    <div class="gallery-wrapper">
+      <div (click)="openMediaViewer(i)" class="image" *ngFor="let image of gallery; let i = index">
+        <img [src]="image.src" />
+      </div>
+    </div>
+    <a *ngIf="gallery_design != 'page'" class="missions-link" [routerLink]="'/missions'">View All Our Missions</a>
+  </div>
+</div>

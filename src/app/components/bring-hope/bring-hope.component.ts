@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementsService } from 'src/app/services/elements.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
 	selector: 'app-bring-hope',
@@ -8,10 +9,11 @@ import { ElementsService } from 'src/app/services/elements.service';
 })
 export class BringHopeComponent implements OnInit {
 	viewPortHeight: number;
-	constructor(private elementsService: ElementsService) { }
+	constructor(private elementsService: ElementsService, private deviceDetector: DeviceDetectorService) { }
 
 	ngOnInit(): void {
-		this.viewPortHeight = this.elementsService.getViewPortData().height;
-
+		if (!this.deviceDetector.isMobile() && window.innerWidth > 1024) {
+			this.viewPortHeight = this.elementsService.getViewPortData().height;
+		}
 	}
 }

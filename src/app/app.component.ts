@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     { text: 'Home', route: '' },
     { text: 'About', route: '/about' },
     { text: 'Meet the team', route: '/meet-the-team' },
-    // { text: 'Missions', route: '/missions' },
+    { text: 'Missions', route: '/missions' },
     { text: 'Donate', route: '/donate' },
     { text: 'Contact', route: '/contact' }
   ];
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (this.mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "scrollp";
+      document.body.style.overflow = "scroll";
     }
   }
 

@@ -1,6 +1,8 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, } from '@angular/core';
 import { trigger, transition, style, animate, useAnimation } from "@angular/animations";
 import { ElementsService } from '../../services/elements.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
+
 import {
 	fadeIn,
 	fadeOut,
@@ -25,25 +27,30 @@ import {
 	]
 })
 export class CarouselComponent implements OnInit {
-	@Input() slides: { left?: number, src: string, text: { header: string, description: string, width?: number }, button?: { text: string, link: string } }[];
+	@Input() slides: { left?: number, src: string, text: { header: string, description: string, width?: number | string }, button?: { text: string, link: string } }[];
 	@Input() displayImageText: boolean;
 	currentSlide = 0;
 	@ViewChild('imageSlider', { static: false }) imageSlider: ElementRef;
 	caroselHeight: string;
 	caroselIntervalId: any;
 
-	constructor(private elementsService: ElementsService) { }
+	constructor(private elementsService: ElementsService, private deviceDetector: DeviceDetectorService) { }
 
 	ngOnInit() {
-		this.caroselHeight = window.innerHeight + 'px';
+
+		if (!this.deviceDetector.isMobile() && window.innerWidth > 1024) {
+			this.caroselHeight = window.innerHeight + 'px';
+		}
 		this.preloadImages();
 	}
 
 	ngAfterViewInit(): void {
-		setTimeout(() => {
-			this.caroselHeight = window.innerHeight - (this.elementsService.getNavigationBarElementData().height +
-				this.elementsService.getLogoElementData().height) + 'px';
-		})
+		if (!this.deviceDetector.isMobile() && window.innerWidth > 1024) {
+			setTimeout(() => {
+				this.caroselHeight = window.innerHeight - (this.elementsService.getNavigationBarElementData().height +
+					this.elementsService.getLogoElementData().height) + 'px';
+			})
+		}
 		// this.startCarosel();
 	}
 

@@ -71,3 +71,80 @@
 
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .our-mission-section {
+    display: block;
+    height: auto;
+
+    figure {
+      display: none;
+    }
+
+    .our-mission {
+      width: 100%;
+
+      .txt-wrapper {
+        width: 100%;
+        text-align: center;
+        padding: 40px;
+
+
+        .title {
+          width: 100%;
+        }
+
+        p {
+          width: 100%;
+        }
+
+        .donate-btn {
+          margin: 0 auto;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .our-mission-section {
+    display: block;
+    height: auto;
+
+    figure {
+      width: 100%;
+    }
+
+    .our-mission {
+      width: 100%;
+      display: block;
+
+      .txt-wrapper {
+        padding: 0px;
+        padding-bottom: 20px;
+
+        .title {
+          width: auto;
+          padding-top: 20px;
+        }
+
+        p {
+          width: auto;
+          font-size: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        span {
+          font-size: 20px;
+        }
+
+        .donate-btn {
+          width: calc(100% - 40px);
+        }
+      }
+    }
+  }
+}

@@ -26,6 +26,8 @@ import { MediaViewerComponent } from './components/media-viewer/media-viewer.com
 import {
   MatDialogModule
 } from '@angular/material/dialog';
+import { MobileMediaViewerComponent } from './components/mobile-media-viewer/mobile-media-viewer.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 
@@ -48,7 +50,9 @@ import {
     HomePageScrollActionDirective,
     OurMissionComponent,
     SnackBarComponent,
-    MediaViewerComponent
+    MediaViewerComponent,
+    MobileMediaViewerComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

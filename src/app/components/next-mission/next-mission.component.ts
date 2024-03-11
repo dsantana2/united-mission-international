@@ -11,14 +11,74 @@ export class NextMissionComponent implements OnInit, AfterViewInit {
 	viewPortWidth: number;
 	page: string = 'center';
 	@ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
+	gallery: any = [
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp',
+			text: '',
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-two.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp',
+			text: '',
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-two.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp',
+			text: '',
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-two.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp',
+			text: '',
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-two.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		},
+		{
+			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp',
+			text: ''
+		}
+	];
 
 	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef) { }
-
 
 	ngOnInit(): void {
 		this.viewPortHeight = this.elementsService.getViewPortData().height;
 		this.viewPortWidth = this.elementsService.getViewPortData().width;
-
 	}
 
 	ngAfterViewInit(): void {
@@ -60,7 +120,6 @@ export class NextMissionComponent implements OnInit, AfterViewInit {
 	onResize(event: any) {
 		this.viewPortHeight = this.elementsService.getViewPortData().height - this.elementsService.getNavigationBarElementData().height;
 		this.viewPortWidth = this.elementsService.getViewPortData().width;
-		console.log(this.page)
 		this.widgetsContent.nativeElement.scrollTo({ left: (this.page === 'left' ? (0) : this.page === 'center' ? (this.viewPortWidth) : (this.viewPortWidth * 2)), behavior: 'smooth' });
 	}
 }

@@ -3,8 +3,9 @@
     <div *ngIf="i === currentSlide" @carouselAnimation (mouseleave)="startCarosel()" (mouseenter)="stopCarosel()"
       class="slide-wrapper">
       <img [src]="slide.src" class="slide" />
+      <div class="img-overlay"></div>
       <div *ngIf="displayImageText" class="image-text">
-        <div class="image-text-positioning" [style.left.px]="slide.left">
+        <div class="image-text-positioning" [style.left.px]="slide">
           <ul id="menu">
             <li class="txt fade-in-text">
               <span class="txt header">{{slide.text.header}}</span>

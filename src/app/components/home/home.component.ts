@@ -3,6 +3,7 @@ import { ElementsService } from 'src/app/services/elements.service';
 import { MobileMenuService } from '../../services/mobile-menu.service';
 import * as AWS from 'aws-sdk';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
 	selector: 'app-home',
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
 	s3: any;
 	sectionsList = [];
 	selectedView: string = 'carosel';
-	images: { left?: number, src: string, text: { header: string, description: string, width?: number }, button?: { text: string, link: string } }[] = [
+	images: { left?: number, src: string, text: { header: string, description: string, width?: number | string }, button?: { text: string, link: string } }[] = [
 		{
 			src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp',
 			text: { header: "United Mission International Welcomes You", description: 'Make a Difference Today' },
@@ -51,9 +52,17 @@ export class HomeComponent implements OnInit {
 			button: { text: 'Contact Us', link: 'mailto:info@unitedmi.org' }
 		}];
 
-	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef, private mobileMenuService: MobileMenuService) { }
+	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef,
+		private mobileMenuService: MobileMenuService, private deviceDetector: DeviceDetectorService) { }
 
 	ngOnInit(): void {
+
+		if (this.deviceDetector.isMobile()) {
+			this.images[2].left = 0;
+			this.images[2].text.width = 'auto';
+
+		}
+
 		this.viewPortHeight = this.elementsService.getViewPortData().height;
 
 		this.s3 = new AWS.S3({

@@ -1,11 +1,11 @@
 <div class="app">
-  <div *ngIf="route != '/'" id="logo" #logoElement class="united-mission-logo">
+  <div *ngIf="route != '/' && route != '/missions'" id="logo" #logoElement class="united-mission-logo">
     <div [ngClass]="{'open': mobileMenuOpen }" (click)="showHideMobileMenu()" class="mobile-nav"></div>
     <div class="logo-img"></div>
   </div>
-  <app-navigation-bar *ngIf="route != '/'" class="nav"></app-navigation-bar>
+  <app-navigation-bar *ngIf="route != '/' && route != '/missions'" class="nav"></app-navigation-bar>
   <router-outlet></router-outlet>
-  <app-footer *ngIf="route != '/'"></app-footer>
+  <app-footer *ngIf="route != '/' && route != '/missions'"></app-footer>
   <div [ngClass]="{'open': mobileMenuOpen, 'close out': !mobileMenuOpen}" class="side-nav">
     <div class="navigation-wrapper">
       <div (click)="showHideMobileMenu()" class="route-wrapper" *ngFor="let route of routes" [routerLink]="route.route">

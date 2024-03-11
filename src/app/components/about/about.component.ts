@@ -2,6 +2,7 @@ import { AfterViewInit, Component, HostListener, OnInit, ViewContainerRef, Compo
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ElementsService } from 'src/app/services/elements.service';
 import { MediaViewerService } from '../../services/media-viewer.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-about',
@@ -32,9 +33,9 @@ export class AboutComponent implements AfterViewInit, OnInit {
     { src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp' },
     { src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-two.webp' },
     { src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-three.webp' },
-    { src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp' }]
+    { src: 'https://united-mission-international.s3.us-east-2.amazonaws.com/children.webp' }]
 
-  constructor(private mediaViewerService: MediaViewerService) { }
+  constructor(private mediaViewerService: MediaViewerService, private deviceDetector: DeviceDetectorService) { }
   ngOnInit(): void {
   }
 
@@ -60,6 +61,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
       media: this.images,
       selectedMedia: index
     }
+
     this.mediaViewerService.openDialog('0ms', '0ms', mediaObj);
   }
 }
