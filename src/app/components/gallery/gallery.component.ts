@@ -19,7 +19,7 @@ export class GalleryComponent implements OnInit {
   openMediaViewer(index) {
     let mediaObj = {
       media: this.gallery,
-      selectedMedia: index
+      selectedMedia: index,
     }
 
     this.mediaViewerService.openDialog('0ms', '0ms', mediaObj);

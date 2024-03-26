@@ -45,11 +45,13 @@ export class MediaViewerComponent implements OnInit {
   }
 
   onPreviousClick() {
+    this.layoutView = 'image';
     const previous = this.currentSlide - 1;
     this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
   }
 
   onNextClick() {
+    this.layoutView = 'image';
     const next = this.currentSlide + 1;
     this.currentSlide = next === this.slides.length ? 0 : next;
   }
