@@ -3,6 +3,10 @@
   scroll-snap-type: y mandatory;
   position: relative;
 
+  &.disable-scroll {
+    overflow: hidden;
+  }
+
   &.list {
     scroll-snap-type: none;
 

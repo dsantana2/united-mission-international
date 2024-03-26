@@ -15,6 +15,7 @@ export class MissionsComponent implements OnInit, AfterViewInit {
   layoutView: 'page' | 'list' = 'page';
   navigationHeight: number;
   showGallery: boolean = false;
+  disableScroll: boolean = false;
   gallery: any = [
     {
       src: 'https://d337lrhmtj9qpq.cloudfront.net/carosel/carosel-photo-one.webp',

@@ -1,5 +1,5 @@
 <div [style.height.px]="viewPortHeight" class="missions-page"
-  [ngClass]="{'page': layoutView == 'page', 'list': layoutView == 'list'}">
+  [ngClass]="{'page': layoutView == 'page', 'list': layoutView == 'list', 'disable-scroll': disableScroll}">
   <!-- <div class="header-navigation">
     <div id="logo" #logoElement class="united-mission-logo">
       <div (click)="showHideMobileMenu()" class="mobile-nav"></div>
@@ -32,7 +32,7 @@
         <div class="mission-content">
           <h1 class="location">Kenya, Africa</h1>
           <h4 class="date">8/21/1994</h4>
-          <div (click)="mission.view = 'gallery'" class="image-wrapper">
+          <div (click)="mission.view = 'gallery'; disableScroll = true" class="image-wrapper">
             <img
               src="https://static.wixstatic.com/media/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg/v1/fit/w_1187,h_791,q_90/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg" />
           </div>
@@ -44,7 +44,7 @@
       </div>
       <div *ngIf="mission.view == 'gallery' && layoutView == 'page'" class="gallery"
         [style.height.px]="(i == 0 ? viewPortHeight - navigationHeight : viewPortHeight)">
-        <a (click)="mission.view = 'cover'" class="close"></a>
+        <a (click)="mission.view = 'cover'; disableScroll = false" class="close"></a>
         <app-gallery [gallery_design]="'page'" [gallery]="gallery"></app-gallery>
       </div>
     </section>
