@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { DeviceDetectorService } from '../../services/device-detection.service'
 
 @Component({
   selector: 'app-our-mission',
