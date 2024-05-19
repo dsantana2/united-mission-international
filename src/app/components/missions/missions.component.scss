@@ -213,3 +213,26 @@
 .close:after {
   transform: rotate(-45deg);
 }
+
+
+@media only screen and (max-width: 600px) {
+  .missions-page {
+    .sections-wrapper {
+      .navigation {
+        .nav {
+          display: none;
+        }
+      }
+    }
+
+    .center-page {
+      img {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border-radius: 0;
+        border-style: hidden;
+      }
+    }
+  }
+}

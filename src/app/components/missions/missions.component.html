@@ -1,16 +1,5 @@
 <div [style.height.px]="viewPortHeight" class="missions-page"
   [ngClass]="{'page': layoutView == 'page', 'list': layoutView == 'list', 'disable-scroll': disableScroll}">
-  <!-- <div class="header-navigation">
-    <div id="logo" #logoElement class="united-mission-logo">
-      <div (click)="showHideMobileMenu()" class="mobile-nav"></div>
-      <div class="logo-img"></div>
-    </div>
-    <app-navigation-bar class="nav"></app-navigation-bar>
-    <div class="view-option-wrapper">
-      <div [ngClass]="{'active' : layoutView == 'page' }" (click)="changeLayout('page')" class="page">Page View</div>
-      <div [ngClass]="{'active' : layoutView == 'list' }" (click)="changeLayout('list')" class="list">List View</div>
-    </div>
-  </div> -->
   <div class="sections-wrapper">
     <section id="{{mission.country}}" #section *ngFor="let mission of missions; let i = index">
       <div *ngIf="i == 0" class="navigation">
@@ -19,12 +8,6 @@
           <div class="logo-img"></div>
         </div>
         <app-navigation-bar class="nav"></app-navigation-bar>
-        <!-- <div *ngIf="mission.view == 'cover'" class="view-option-wrapper">
-          <div [ngClass]="{'active' : layoutView == 'page' }" (click)="changeLayout('page')" class="page">Page View
-          </div>
-          <div [ngClass]="{'active' : layoutView == 'list' }" (click)="changeLayout('list')" class="list">List View
-          </div>
-        </div> -->
       </div>
       <div *ngIf="mission.view == 'cover'"
         [style.height.px]="(i == 0 && layoutView == 'page' ? missionLayoutHeight - navigationHeight : missionLayoutHeight)"

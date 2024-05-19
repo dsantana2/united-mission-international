@@ -73,3 +73,30 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .gallery.page {
+    .mission-content {
+      .gallery-wrapper {
+        width: 100%;
+
+
+        .image {
+          margin-right: 0px;
+          margin-bottom: 0px;
+          width: calc((100% / 2) - 5px);
+          height: revert-layer;
+
+          &:nth-child(2n) {
+            margin-left: 5px;
+          }
+
+          img {
+            // width: calc(100% / 2);
+            // height: revert-layer;
+          }
+        }
+      }
+    }
+  }
+}
