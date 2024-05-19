@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ElementsService } from 'src/app/services/elements.service';
 import { MobileMenuService } from '../../services/mobile-menu.service';
+import { DeviceDetectorService } from 'src/app/services/device-detection.service';
 
 @Component({
   selector: 'app-missions',
@@ -78,7 +79,7 @@ export class MissionsComponent implements OnInit, AfterViewInit {
       text: ''
     }
   ];
-  constructor(private elementsService: ElementsService, private mobileMenuService: MobileMenuService) { }
+  constructor(private elementsService: ElementsService, private mobileMenuService: MobileMenuService, private deviceDetectorService: DeviceDetectorService) { }
 
   missions: { view: 'gallery' | 'cover' | 'info', country: string, continent: string, date: string, message: string, money_raised: string, cover: string }[] = [
     {
@@ -105,7 +106,10 @@ export class MissionsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.viewPortHeight = this.elementsService.getViewPortData().height;
-    this.missionLayoutHeight = this.elementsService.getViewPortData().height;
+
+    if (!this.deviceDetectorService.isMobile()) {
+      this.missionLayoutHeight = this.elementsService.getViewPortData().height;
+    }
 
     this.navigationHeight = (this.elementsService.getNavigationBarElementData().height +
       this.elementsService.getLogoElementData().height);

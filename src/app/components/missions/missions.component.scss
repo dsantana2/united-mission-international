@@ -217,6 +217,8 @@
 
 @media only screen and (max-width: 600px) {
   .missions-page {
+    scroll-snap-type: none;
+
     .sections-wrapper {
       .navigation {
         .nav {
@@ -226,6 +228,16 @@
     }
 
     .center-page {
+      height: auto;
+      margin-bottom: 60px;
+      margin-top: 20px;
+
+      .mission-content {
+        span {
+          padding-top: 0px;
+        }
+      }
+
       img {
         width: 100%;
         height: auto;
