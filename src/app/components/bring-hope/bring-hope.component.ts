@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementsService } from 'src/app/services/elements.service';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { DeviceDetectorService } from '../../services/device-detection.service'
 
 @Component({
 	selector: 'app-bring-hope',

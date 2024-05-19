@@ -4,8 +4,7 @@ import { MobileMediaViewerComponent } from '../components/mobile-media-viewer/mo
 import {
 	MatDialog,
 } from '@angular/material/dialog';
-
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { DeviceDetectorService } from '../services/device-detection.service'
 
 @Injectable({
 	providedIn: 'root'

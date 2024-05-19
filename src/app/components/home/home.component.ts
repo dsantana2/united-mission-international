@@ -3,7 +3,7 @@ import { ElementsService } from 'src/app/services/elements.service';
 import { MobileMenuService } from '../../services/mobile-menu.service';
 import * as AWS from 'aws-sdk';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { DeviceDetectorService } from '../../services/device-detection.service'
 
 @Component({
 	selector: 'app-home',

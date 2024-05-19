@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, } from '@angular/core';
 import { trigger, transition, style, animate, useAnimation } from "@angular/animations";
 import { ElementsService } from '../../services/elements.service';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { DeviceDetectorService } from '../../services/device-detection.service'
 
 import {
 	fadeIn,
