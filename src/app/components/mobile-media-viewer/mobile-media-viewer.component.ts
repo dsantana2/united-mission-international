@@ -45,7 +45,7 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
       });
 
       this.loadSlider();
-    });
+    }, 300);
 
   }
   ngOnInit(): void {
