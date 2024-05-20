@@ -23,7 +23,7 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
   slideIndex: number = 0;
   slidesLength: number;
   slideSize: number;
-  posInitial: number;
+  posInitial: number = 0;
   posFinal: number;
   threshold: number = 100;
   allowShift: boolean = true;
@@ -49,7 +49,6 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
 
   }
   ngOnInit(): void {
-    console.log(this.data)
     this.slides = this.data.media;
     this.currentSlide = this.data.selectedMedia;
 
@@ -59,7 +58,7 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
     this.slidesLength = this.slides.length - 1;
     this.slideSize = this.sliderItems.nativeElement.getElementsByClassName('slide')[0].offsetWidth;
     this.slider.nativeElement.classList.add('loaded');
-
+    this.slideIndex = this.data.selectedMedia;
     // Mouse events
     this.sliderItems.nativeElement.onmousedown = this.dragStart;
 
@@ -71,6 +70,8 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
 
     this.prev.nativeElement.addEventListener('click', () => { this.event = 'click'; });
     this.next.nativeElement.addEventListener('click', () => { this.event = 'click'; });
+    this.sliderItems.nativeElement.style.left = (this.posInitial - (this.slideSize * this.currentSlide)) + "px";
+
     this.showCarosel = true;
   }
 
