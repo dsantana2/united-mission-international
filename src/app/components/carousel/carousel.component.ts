@@ -58,7 +58,7 @@ export class CarouselComponent implements OnInit {
 					this.elementsService.getLogoElementData().height) + 'px';
 			})
 		}
-		// this.startCarosel();
+		this.startCarosel();
 	}
 
 	preloadImages() {
