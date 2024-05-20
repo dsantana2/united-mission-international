@@ -68,11 +68,11 @@ export class CarouselComponent implements OnInit {
 	}
 
 	startCarosel() {
-		// if (!this.caroselIntervalId) {
-		// 	this.caroselIntervalId = setInterval(() => {
-		// 		this.onNextClick();
-		// 	}, 5000);
-		// }
+		if (!this.caroselIntervalId) {
+			this.caroselIntervalId = setInterval(() => {
+				this.onNextClick();
+			}, 5000);
+		}
 	}
 
 	stopCarosel() {
