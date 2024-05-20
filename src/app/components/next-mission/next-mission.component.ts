@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { ElementsService } from 'src/app/services/elements.service';
-
+import { DeviceDetectorService } from '../../services/device-detection.service';
 @Component({
 	selector: 'app-next-mission',
 	templateUrl: './next-mission.component.html',
@@ -74,10 +74,12 @@ export class NextMissionComponent implements OnInit, AfterViewInit {
 		}
 	];
 
-	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef) { }
+	constructor(private elementsService: ElementsService, private cd: ChangeDetectorRef, private deviceDetectorService: DeviceDetectorService) { }
 
 	ngOnInit(): void {
-		this.viewPortHeight = this.elementsService.getViewPortData().height;
+		if (!this.deviceDetectorService.isMobile()) {
+			this.viewPortHeight = this.elementsService.getViewPortData().height;
+		}
 		this.viewPortWidth = this.elementsService.getViewPortData().width;
 	}
 
