@@ -45,8 +45,7 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
       });
 
       this.loadSlider();
-      this.showCarosel = true;
-    }, 0);
+    });
 
   }
   ngOnInit(): void {
@@ -72,6 +71,7 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
     this.prev.nativeElement.addEventListener('click', () => { this.event = 'click'; });
     this.next.nativeElement.addEventListener('click', () => { this.event = 'click'; });
     this.sliderItems.nativeElement.style.left = (this.posInitial - (this.slideSize * this.currentSlide)) + "px";
+    this.showCarosel = true;
   }
 
   dragStart(e) {
