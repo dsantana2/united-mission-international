@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ChangeDetectorRef, Inject, OnInit, ViewChild } from '@angular/core';
 import {
   MatDialogRef,
   MAT_DIALOG_DATA
@@ -32,7 +32,7 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
   event: string = '';
   currentPos: number;
   showCarosel: boolean = false;
-  constructor(public dialogRef: MatDialogRef<MobileMediaViewerComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public dialogRef: MatDialogRef<MobileMediaViewerComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private cd: ChangeDetectorRef) { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -45,7 +45,8 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
       });
 
       this.loadSlider();
-    }, 500);
+      this.showCarosel = true;
+    }, 0);
 
   }
   ngOnInit(): void {
@@ -71,8 +72,6 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
     this.prev.nativeElement.addEventListener('click', () => { this.event = 'click'; });
     this.next.nativeElement.addEventListener('click', () => { this.event = 'click'; });
     this.sliderItems.nativeElement.style.left = (this.posInitial - (this.slideSize * this.currentSlide)) + "px";
-
-    this.showCarosel = true;
   }
 
   dragStart(e) {
