@@ -37,11 +37,6 @@ export class CarouselComponent implements OnInit {
 	constructor(private elementsService: ElementsService, private deviceDetector: DeviceDetectorService) { }
 
 	ngOnInit() {
-		console.log('ngOnInit')
-		console.log(this.deviceDetector.isMobile())
-		console.log(window.innerWidth)
-
-
 		if (!this.deviceDetector.isMobile() && window.innerWidth > 1024) {
 			this.caroselHeight = window.innerHeight + 'px';
 		}
@@ -49,9 +44,6 @@ export class CarouselComponent implements OnInit {
 	}
 
 	ngAfterViewInit(): void {
-		console.log('ngAfterViewInit')
-		console.log(this.deviceDetector.isMobile())
-		console.log(window.innerWidth)
 		if (!this.deviceDetector.isMobile() && window.innerWidth > 1024) {
 			setTimeout(() => {
 				this.caroselHeight = window.innerHeight - (this.elementsService.getNavigationBarElementData().height +
@@ -98,7 +90,9 @@ export class CarouselComponent implements OnInit {
 
 	@HostListener('window:resize', ['$event'])
 	onResize(event: any) {
-		this.caroselHeight = window.innerHeight - (this.elementsService.getNavigationBarElementData().height +
-			this.elementsService.getLogoElementData().height) + 'px';
+		if (!this.deviceDetector.isMobile() && window.innerWidth > 1024) {
+			this.caroselHeight = window.innerHeight - (this.elementsService.getNavigationBarElementData().height +
+				this.elementsService.getLogoElementData().height) + 'px';
+		}
 	}
 }
