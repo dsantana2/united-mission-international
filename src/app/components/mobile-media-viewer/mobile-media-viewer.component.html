@@ -1,7 +1,7 @@
 <div class="viewer">
   <a (click)="closeModal()" class="close"></a>
 
-  <div id="slider" #slider class="slider">
+  <div [style.visibility]="showCarosel ? 'visible': 'hidden'" id="slider" #slider class="slider">
     <div #sliderwrapper class="wrapper">
       <div id="slides" class="slides" #sliderItems>
         <div #slide class="slide" *ngFor="let slide of slides; let i = index">
