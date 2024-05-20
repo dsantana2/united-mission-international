@@ -41,7 +41,7 @@
           //   cursor: pointer;
           // }
 
-          span {
+          .description {
             font-family: futura-lt-w01-book, sans-serif;
             font-size: 18px;
             color: #aaaaaa;
@@ -229,8 +229,10 @@
           }
 
           .mission-content {
-            span {
+            .description {
               padding-top: 0px;
+              width: calc(100% - 40px);
+              margin: 0 auto;
 
             }
           }

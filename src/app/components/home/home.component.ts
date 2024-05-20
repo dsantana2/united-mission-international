@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
 
 
 		this.listDirectories().then((res) => {
-			console.log(res)
+			// console.log(res)
 		})
 	}
 
@@ -114,7 +114,6 @@ export class HomeComponent implements OnInit {
 			this.sectionsList = [...this.sectionsList, { id: element.nativeElement.id }];
 		});
 
-		console.log(this.sectionsList)
 
 		const element = document.querySelector("div#home");
 		element.addEventListener("scrollend", (event) => {
@@ -125,22 +124,18 @@ export class HomeComponent implements OnInit {
 
 			if (this.elementInViewport(carosel)) {
 				this.selectedView = 'carosel';
-				console.log('carosel')
 			}
 
 			if (this.elementInViewport(hope)) {
 				this.selectedView = 'hope';
-				console.log('hope')
 			}
 
 			if (this.elementInViewport(bible)) {
 				this.selectedView = 'bible';
-				console.log('bible')
 			}
 
 			if (this.elementInViewport(mission)) {
 				this.selectedView = 'mission';
-				console.log('mission')
 			}
 		});
 	}
@@ -152,9 +147,6 @@ export class HomeComponent implements OnInit {
 
 	@HostListener('window:scrolled', ['$event'])
 	onWindowScroll() {
-		console.log('scroll')
-
-
 	}
 
 

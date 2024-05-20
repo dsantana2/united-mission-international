@@ -49,8 +49,10 @@ export class MobileMediaViewerComponent implements OnInit, AfterViewInit {
 
   }
   ngOnInit(): void {
+    console.log(this.data)
     this.slides = this.data.media;
     this.currentSlide = this.data.selectedMedia;
+
   }
 
   loadSlider() {

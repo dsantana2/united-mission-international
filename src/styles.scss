@@ -192,6 +192,22 @@ body {
   font-family: poppins-semibold, poppins, sans-serif;
 }
 
+.cdk-global-overlay-wrapper {
+  justify-content: normal !important;
+  align-items: normal !important;
+}
+
+.cdk-overlay-pane {
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
+.mdc-dialog__container {
+  .mdc-dialog__surface {
+    border-radius: 0px !important;
+  }
+}
+
 .mobile-nav {
   display: none;
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'meet-the-team', component: TeamComponent },
-  { path: 'missions', component: MissionsComponent },
+  // { path: 'missions', component: MissionsComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'contact', component: ContactComponent }
 ];
