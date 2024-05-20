@@ -1,5 +1,7 @@
 .donate-page {
   display: block;
+  background-color: #f5f5f5;
+  padding-top: 20px;
 
   .header {
     text-align: center;
@@ -51,7 +53,7 @@
 
 @media only screen and (max-width: 600px) {
   .donate-page {
-    padding: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
 
     .header {
       margin-top: 10px;

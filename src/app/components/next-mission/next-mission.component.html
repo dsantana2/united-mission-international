@@ -3,7 +3,7 @@
     <div class="next-mission-pages-wrapper">
       <div [style.width.px]="viewPortWidth" class="left-page">
         <a (click)="scrollRight()" class="close"></a>
-        <app-gallery [gallery]="gallery"></app-gallery>
+        <app-gallery [viewPortWidth]="viewPortWidth" [gallery]="gallery"></app-gallery>
       </div>
       <div [style.width.px]="viewPortWidth" class="center-page">
         <div class="controls-wrapper">
@@ -20,6 +20,14 @@
           <div class="image-wrapper">
             <img
               src="https://static.wixstatic.com/media/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg/v1/fit/w_1187,h_791,q_90/bf1fba_39c01b308b71496bbaf1d2f335193631~mv2.jpg" />
+          </div>
+          <div class="controls-wrapper-mobile">
+            <button class="control prev" (click)="scrollLeft()">
+              <span class="arrow left"></span>
+            </button>
+            <button class="control next" (click)="scrollRight()">
+              <span class="arrow right"></span>
+            </button>
           </div>
           <span>We have been blessed to get to know amazing people through our mission trips across Africa and Central
             America.</span>

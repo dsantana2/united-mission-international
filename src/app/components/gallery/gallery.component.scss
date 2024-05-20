@@ -33,6 +33,7 @@
       color: #aaaaaa;
       display: block;
       margin-bottom: 40px;
+      white-space: break-spaces;
     }
 
     .missions-link {
@@ -57,7 +58,6 @@
       width: 300px;
       height: 300px;
       display: inline-block;
-      background-color: #aaaaaa;
       margin-right: 20px;
       margin-bottom: 20px;
       cursor: pointer;
@@ -95,6 +95,23 @@
             // width: calc(100% / 2);
             // height: revert-layer;
           }
+        }
+      }
+    }
+  }
+
+  .gallery {
+    .mission-content {
+      .gallery-wrapper {
+        width: 100%;
+
+        .image {
+          margin-right: 0px;
+          margin-bottom: 0px;
+          width: calc(100% - 10px);
+          height: revert-layer;
+          padding-left: 5px;
+          padding-right: 5px;
         }
       }
     }

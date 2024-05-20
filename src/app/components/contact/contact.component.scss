@@ -1,4 +1,6 @@
 .contact-page {
+  background-color: #f5f5f5;
+  padding-top: 20px;
 
   .input {
     display: flex;
@@ -17,7 +19,7 @@
       font-family: poppins-semibold, poppins, sans-serif;
       font-weight: 100;
       color: #555555;
-      margin-top: 29px;
+      margin-top: 9px;
       margin-bottom: 11px;
     }
 
@@ -112,6 +114,10 @@
 
     .contact-form {
       margin-bottom: 20px;
+
+      h1 {
+        margin-top: 0px;
+      }
 
       span {
         margin-bottom: 30px;

@@ -9,7 +9,7 @@ import { MediaViewerService } from '../../services/media-viewer.service';
 export class GalleryComponent implements OnInit {
   @Input() gallery: any;
   @Input() gallery_design: any;
-
+  @Input() viewPortWidth: any;
 
   constructor(private mediaViewerService: MediaViewerService) { }
 

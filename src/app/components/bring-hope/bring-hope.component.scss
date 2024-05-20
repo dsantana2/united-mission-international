@@ -117,6 +117,8 @@
     padding-top: 40px;
 
     .bring-hope-content-wrapper {
+      padding-top: 0px;
+
       .content {
         .header {
           font-size: 22px;
@@ -130,6 +132,10 @@
           .option {
             margin-right: 0px;
             margin-bottom: 20px;
+          }
+
+          .option:last-child {
+            margin-top: 0px;
           }
         }
       }

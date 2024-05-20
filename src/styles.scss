@@ -183,6 +183,11 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 * {
   font-family: poppins-semibold, poppins, sans-serif;
 }
